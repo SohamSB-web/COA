@@ -1,0 +1,54 @@
+mov ax,18H
+mov bx,17H
+add ax,bx
+ret
+;addition
+---------------------------------------------------
+
+mov ax,18H
+mov bx,17H
+sub ax,bx
+ret
+;subtraction
+---------------------------------------------------
+
+mov ax,18H
+mov bx,12H
+mul bx
+ret
+;multiplication
+---------------------------------------------------
+
+mov ax,18H
+mov bx,02H
+div bx
+ret
+;division
+---------------------------------------------------
+
+mov ax,18H
+mov bx,02H
+and ax,bx
+ret
+;AND
+---------------------------------------------------
+
+mov ax,08H
+mov bx,02H
+or ax,bx
+ret
+;OR
+---------------------------------------------------
+
+mov ax,08H
+mov bx,03H
+xor ax,bx
+ret
+;XOR
+---------------------------------------------------
+
+mov ax,00H
+mov bx,03H
+not ax
+ret
+;NOT
