@@ -1,0 +1,30 @@
+.model tiny        
+.code              
+org 100h       
+    
+start:             
+jmp main_code  
+; --- Data Area ---
+arr1 db 5,6,7,8
+arr2 db 1,2,3,4
+LEN equ 4
+
+; --- Code Area ---
+main_code:
+    mov cx, LEN
+    mov si, offset arr1
+    mov di, offset arr2
+
+exch_loop:
+    mov al, [si]
+    xchg al, [di]
+    mov [si], al
+    inc si
+    inc di
+    loop exch_loop
+
+; --- Exit to DOS ---
+mov ah, 4ch
+int 21h
+
+end start          

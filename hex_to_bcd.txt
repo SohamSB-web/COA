@@ -1,0 +1,23 @@
+ORG 100h
+
+    mov al, 24h      
+    mov ah, 0
+    mov bl, 10
+    div bl    
+    shl al, 4        
+    or  al, ah        
+    mov bl, al        
+
+    ; --- Print binary representation of this BCD value ---
+    mov ah, 02h
+    mov cl, 8
+print_bits:
+    mov dl, 0
+    rcl bl, 1
+    adc dl, 30h
+    int 21h
+    loop print_bits
+
+    ; Exit
+    mov ah, 4Ch
+    int 21h
